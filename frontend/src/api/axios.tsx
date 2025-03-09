@@ -5,4 +5,9 @@ const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
+export const getChallenges = async () => {
+  const response = await api.get("challenges/");
+  return response.data;
+};
+
 export default api;
