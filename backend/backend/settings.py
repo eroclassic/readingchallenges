@@ -163,4 +163,4 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
 }
 
-
+AUTH_USER_MODEL = 'challenges.User'
