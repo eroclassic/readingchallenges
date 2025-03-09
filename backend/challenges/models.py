@@ -25,6 +25,31 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+    
+class UserBook(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_books")
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="user_books")
+    status = models.CharField(
+        max_length=20, 
+        choices=[
+            ("read", "Read"),
+            ("currently-reading", "Currently Reading"),
+            ("to-read", "To Read"),
+        ]
+    )
+    rating = models.IntegerField(null=True, blank=True)
+    review = models.TextField(null=True, blank=True)
+    private_notes = models.TextField(null=True, blank=True)
+    
+    date_added = models.DateTimeField(auto_now_add=True)
+    date_read = models.DateField(null=True, blank=True)
+    read_count = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        unique_together = ("user", "book")
+
+    def __str__(self):
+        return f"{self.user.username} - {self.book.title} ({self.status})"
 
 class Challenge(models.Model):
     title = models.CharField(max_length=255)
