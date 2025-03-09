@@ -1,0 +1,33 @@
+# Core Django & DRF
+Django>=5.1.6
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.2.2  # JWT Authentication
+djoser>=2.2.0  # User authentication with JWT support
+
+# Database
+psycopg2-binary>=2.9.9  # PostgreSQL adapter for Django
+
+# CORS & Security
+django-cors-headers>=4.3.0  # Enable CORS handling
+whitenoise>=6.6.0  # Serve static files efficiently
+
+# Development & Utilities
+django-extensions>=3.2.3  # Extra useful commands for Django
+python-dotenv>=1.0.1  # Manage environment variables
+ipython>=8.12.0  # Better interactive shell for Django
+
+# Linting & Formatting (Optional)
+black>=23.1.0  # Code formatter
+isort>=5.12.0  # Organize imports
+
+# Caching & Background Tasks (Optional)
+django-redis>=5.4.0  # Redis caching
+celery>=5.2.7  # Task queue for background jobs
+redis>=5.0.1  # Redis dependency for Celery
+
+# Async Support (Optional)
+asgiref>=3.7.2  # For Django async support
+channels>=4.0.0  # WebSockets and async features
+
+# API Testing (Optional)
+pytest-django>=4.5.2  # Testing Django applications
