@@ -1,0 +1,60 @@
+# --- Python / Django ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+logs/
+.env
+*.env
+venv/
+env/
+migrations/
+staticfiles/
+media/
+secrets.json
+
+# Django cache
+*.cache
+*.mo
+*.pot
+*.pyc
+
+# Ignore compiled files
+*.so
+
+# --- PostgreSQL ---
+*.pgsql
+*.pgdump
+pgdata/
+*.sql  # Exclude exported database dumps (modify if needed)
+postgresql.log
+*.backup
+
+# --- Node.js / React ---
+node_modules/
+dist/
+build/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# --- VS Code ---
+.vscode/
+
+# --- OS System Files ---
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+docker-compose.override.yml
+*.dockerfile
+
+# --- IDEs / Editors ---
+.idea/
+*.iml
+
+# --- AWS / Cloud Deployments ---
+*.pem
+.aws/

@@ -75,6 +75,13 @@ class Challenge(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="challenges")  # Assigns the challenge to a user
     is_public = models.BooleanField(default=True)  # Whether the challenge is visible to others
     max_books = models.PositiveIntegerField(null=True, blank=True, default=0, help_text="Max number of books for this challenge")
+    likes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
+        
+        
+class ChallengeList(models.Model):
+    title  = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="challenge_lists")
+    challenges = models.ManyToManyField(Challenge, related_name="challenge_lists")
